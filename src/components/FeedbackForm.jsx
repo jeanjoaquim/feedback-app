@@ -6,7 +6,7 @@ import FeedbackContext from "../context/FeedbackContext";
 
 export default function FeedbackForm({}) {
 
-    const {addFeedback, feedbackEdit} = useContext(FeedbackContext);
+    const {addFeedback, feedbackEdit, updateFeedback} = useContext(FeedbackContext);
 
     const [text, setText] = useState("");
     const [rating, setRating] = useState(10);
@@ -45,7 +45,11 @@ export default function FeedbackForm({}) {
             rating: rating,
         }
 
-        addFeedback(newFeedback)
+        if(feedbackEdit.edit === true) {
+            updateFeedback(feedbackEdit.item.id, newFeedback);
+        } else {
+            addFeedback(newFeedback);
+        }
 
         setText('');
     }
