@@ -4,7 +4,7 @@ import Button from "./shared/Button";
 import { useState, useContext, useEffect } from "react";
 import FeedbackContext from "../context/FeedbackContext";
 
-export default function FeedbackForm({}) {
+export default function FeedbackForm() {
 
     const {addFeedback, feedbackEdit, updateFeedback} = useContext(FeedbackContext);
 

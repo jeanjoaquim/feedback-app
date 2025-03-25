@@ -5,7 +5,7 @@ import FeedbackContext from '../context/FeedbackContext';
 import Spinner from './shared/Spinner';
 
 
-export default function FeedbackList({}) {
+export default function FeedbackList() {
 
     const {feedback, isLoading} = useContext(FeedbackContext)
 

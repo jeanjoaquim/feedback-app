@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import FeedbackContext from "../context/FeedbackContext";
 
-export default function FeedbackStats({}) {
+export default function FeedbackStats() {
 
     const {feedback} = useContext(FeedbackContext);
 
