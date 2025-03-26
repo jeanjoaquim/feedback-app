@@ -11,7 +11,7 @@ export const FeedbackProvider = ({children}) => {
 
     const deleteFeedback = async (id) => {
         if(window.confirm("Are you sure you want to delete it?")) {
-            await fetch(`${API_URL}/feedback/${id}`, {method: 'DELETE'})
+            await fetch(`${API_URL}feedback/${id}`, {method: 'DELETE'})
 
             setFeedback(feedback.filter((item) => item.id !== id))
         }
@@ -22,7 +22,7 @@ export const FeedbackProvider = ({children}) => {
     }, [])
 
     const fetchFeedback = async() => {
-        const response = await fetch(`${API_URL}/feedback?_sort=id&_order=desc`)
+        const response = await fetch(`${API_URL}feedback?_sort=id&_order=desc`)
 
         const data = await response.json();
 
@@ -31,7 +31,7 @@ export const FeedbackProvider = ({children}) => {
     }
 
     const updateFeedback = async(id, updItem) => {
-        const response = await fetch(`${API_URL}/feedback/${id}`, {
+        const response = await fetch(`${API_URL}feedback/${id}`, {
             method: "PUT",
             header: {
                 'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ export const FeedbackProvider = ({children}) => {
 
     const addFeedback = async(newFeedback) => {
 
-        const response = await fetch(`${API_URL}/feedback`, {
+        const response = await fetch(`${API_URL}feedback`, {
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'
